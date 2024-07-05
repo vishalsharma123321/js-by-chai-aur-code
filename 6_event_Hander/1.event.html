@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Hander</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+
+// alert on using on click
+
+// document.querySelector('#owl').onclick= function(){
+//     alert("fuck")
+// }
+
+// alert by eventlistener 
+
+// document.getElementById('owl').addEventListener('click',function(){
+//     alert("fuck ") 
+// })
+
+//events to keeps in mind and study 
+// type , timeStamp , defaultPrevented 
+//target, toElement , srcElement , currentTarget,
+// clientX, clientY , screenX , screenY 
+//altkey , ctrkey,shiftkey,keyCode
+
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log(" clicked inside the ul ");
+// },false) // here the false work as bubbling event which goes from inside to out side 
+
+// document.getElementById('owl').addEventListener('click',function(e){
+//     console.log("clicked inside the owl");
+//     e.stopImmediatePropagation()  // this will stop the bulling means it wont also triger the images event .
+// },false) // here the true is the capturing event  where it starts from out side to indise 
+
+/* 
+deafult is false 
+like in the above code we have created two event listerners where in the first it will genrate event when we click in side the ul means on any photos which are
+inside the ul . and in the second it will genrate even wjen we clicl on the owl imgae but there is a catch when we will click on the owl image it will genrate 
+two events beacuse the images is also inder the image ul . so if its false then it will creat a buble event in which the event of the owl first shown and then 
+the images event will be shown and in the true it will creat a capture in which it will come from outside to inside means it will first print the images ul and
+then the owl . 
+*/
+
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault(); // this will stop the opening of the link 
+//     e.stopPropagation();
+//     console.log("google is clicked ");
+// })
+
+
+
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.parentNode);
+    // console.log(e.target.tagName);
+    // this function will only remove the IMG tags not the UL also . before this when we were clicking out side of the photo it was also removing the full ul 
+    if(e.target.tagName=='IMG'){
+        let removeIt=e.target.parentNode
+        removeIt.remove() // both are used to remove this one is simple and better 
+        }
+    
+},false) 
+
+
+</script>
+</html>

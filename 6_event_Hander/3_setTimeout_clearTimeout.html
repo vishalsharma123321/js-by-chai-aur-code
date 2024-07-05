@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur code </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+setTimeout(function(){
+    // console.log("vishal");
+},2000)
+
+
+setInterval(function(){
+// console.log("vishal sahrma");  this will print the console after every 2 sec
+},2000)
+
+// lets passs a referance in the setTimeOut 
+const myname=function(){
+    // console.log("tony stark ");
+}
+setTimeout(myname,2000)
+
+// lets cahnge our h1 tag agter 4sec 
+// const h1=document.querySelector('h1').innerHTML="best coder in the world ";
+setTimeout(function(){
+    // const h1=document.querySelector('h1').innerHTML="best coder in the world ";
+},4000)
+
+
+// now we know how to setTimeout set study clearTimeout 
+// clearTimeout is used when we have to stop the setTimeout before it execute's
+// lets say if a user visits a website and we want to genrate a popup after 10sec for sign in 
+// but before the 10 sec the user goes to the sign in page that time we no more need 
+// to show the singn in pop up to the user that time we use the clearTimeout .
+
+////////////// ##### clearTimeout   ########
+
+const changeme= setTimeout(function(){
+    const h1=document.querySelector('h1').innerHTML="best coder in the world ";
+},4000)
+
+document.querySelector('#stop').addEventListener('click',()=>{
+    clearTimeout(changeme)
+    console.log("stoped");
+})
+  
+
+</script>
+</html>

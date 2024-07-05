@@ -1,0 +1,13 @@
+ctrl + d = to edit all the same text .
+shift + alt = to deplicate a line .
+alt = to move a line up down 
+alt + mouce click = for multiple cursors .
+
+
+to creat a class with the tag we can write it like 
+1)  h1.heading it will creat it like <h1 class='heading'></h2>
+2) to creat multiple same element and same name class we can use div.weeks*4  this will creat  
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>
+        <div class="day"></div>

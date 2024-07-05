@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai aur javaScript </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+// ######### setIntrva ########
+const date = function(str){
+    console.log(str , Date.now());
+}
+// const interval = setInterval(date,1000,"badboy"); // here we can pass the third veriable after the time like we have passsed the bad boy 
+                                                     // which is taken in the string as str and print with the Date
+
+
+// const interval=0;
+const start = document.querySelector('#start');
+start.addEventListener('click',function(){
+    const interval = setInterval(date,1000,"badboy");
+
+    const stop = document.querySelector('#stop');
+stop.addEventListener('click',function(){
+     stopInterval = clearInterval(interval);
+})
+})
+
+
+                                            
+
+</script>
+</html>

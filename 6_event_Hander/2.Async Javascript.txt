@@ -1,0 +1,19 @@
+# JavaScript 
+    *synchronous  = means not multi threaded language works one by one execution
+    *single threaded = moves on next task or line after finsihing the first one
+
+#Execution Context 
+    * execute one line of code at a time 
+    * call stack * memory heap
+    $coment$ = each operation waits for the last one to compelet brfore execution 
+
+# Blocking code            V/S    Non Blocking Code 
+  *Blocks the flow of Program        *Does not block execution            
+  *Read file sync                    *Read file Async
+$Coment$= use case of blocking code ,  lets assume a user is doing registration the the website 
+          and you are using Non blocking code then while the users data is checked the database
+          the Non blocking wil show the next line of code which is succesfully registred 
+          so thats why we use the Blocking code which will firt check the data base till 
+          the execution is stoped and after the execution of the checking is succesfully from the 
+          database it will show registration succesfully.
+

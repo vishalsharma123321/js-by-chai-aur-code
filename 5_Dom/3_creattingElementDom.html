@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212221; color: #fff;">
+    
+</body>
+<script>
+  const div =document.createElement(`div`)
+  div.id = '17';
+  div.className="main";
+  div.style.backgroundColor='green';
+  div.style.padding='15px';
+  let text = document.createTextNode("hi there its text node ")
+  div.appendChild(text);
+  document.body.appendChild(div);
+
+
+// function  for creating my own div 
+
+  function creatdiv(nameOfDiv,newClass,newId,content){
+   nameOfDiv = document.createElement(`${nameOfDiv}`);
+   nameOfDiv.className=`newClass`;
+   nameOfDiv.style.backgroundColor="red";
+   nameOfDiv.id=`newId`;
+   let innerContent = document.createTextNode(`${content}`)
+   nameOfDiv.appendChild(innerContent);
+   document.body.appendChild(nameOfDiv);
+}
+
+creatdiv("h1","heading","myid","successful div is created");
+
+</script>
+</html>
