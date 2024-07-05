@@ -22,33 +22,32 @@
 //         clearInterval(interval)
 //     })
 //   });
- 
-const randomcolor= function(){
-    const hex='1234567809abcdnf'
-    let color='#'
-    for(let i=0 ; i<6 ; i++){
-        color+=hex[Math.round(Math.random()*16)];
-    } 
+
+const randomcolor = function () {
+    const hex = '1234567809abcdnf'
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
+        color += hex[Math.round(Math.random() * 16)];
+    }
     console.log(color);
     return color
 }
-const startchangingColor = function(){
-   let changecolor = setInterval(backgroundColor,1000)
-    function backgroundColor(){
-        document.body.style.backgroundColor=randomcolor()
+
+const start = document.querySelector('#start')
+const stop = document.querySelector('#stop')
+
+let interval = null;
+start.addEventListener('click', () => {
+    if (interval === null) {
+        interval = setInterval(function () {
+            document.body.style.backgroundColor = randomcolor();
+        }, 500);
     }
-}
-const stopchangingColor = function(){
-    clearInterval(chnagecolor)
-}
-
-
-document.querySelector('#start').addEventListener('click',startchangingColor)
-document.querySelector('#stop').addEventListener('click',stopchangingColor)
-
-
-
-
+});
+stop.addEventListener('click', () => {
+    clearInterval(interval)
+    interval = null;
+});
 
 
 
