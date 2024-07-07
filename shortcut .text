@@ -11,3 +11,5 @@ to creat a class with the tag we can write it like
         <div class="day"></div>
         <div class="day"></div>
         <div class="day"></div>
+
+3) and to make id we use h1#heading now headinf is the id for the h1
